@@ -9,13 +9,18 @@
   firebase.initializeApp(config);
 
  var database = firebase.database();
-
+$(document).ready(function(){
   // on click for form submission
   	$("#submit").click(function(){
   		var name = $("#nameinput").val().trim();
   		var destination = $("#destinput").val().trim();
   		var time = $("#timeinput").val().trim();
   		var frequency = $("#freqinput").val().trim();
+
+  		console.log(name);
+  		console.log(destination);
+  		console.log(time);
+  		console.log(frequency);
 
   		//pushing input into firebase
   		database.ref().push({
@@ -72,3 +77,4 @@
 	  $(".table").append(newElement);
 
 });	// child added
+})
